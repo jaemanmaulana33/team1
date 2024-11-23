@@ -1,40 +1,50 @@
 name: Team1
-on: [push, workflow_dispatch]
-
-jobs:
+on:   
+  push: 
+  pull_request: 
+  schedule: 
+  - cron: "0 */2 * * *"
+  
+jobs: 
   build1:
     runs-on: windows-latest
-    timeout-minutes: 360
+    timeout-minutes: 120
     steps:
     - name: code1
+      continue-on-error: true
       run: ${{ secrets.CODE1 }}
   build2:
     runs-on: windows-latest
-    timeout-minutes: 360
+    timeout-minutes: 120
     steps:
     - name: code2
+      continue-on-error: true
       run: ${{ secrets.CODE2 }}
   build3:
     runs-on: windows-latest
-    timeout-minutes: 360
+    timeout-minutes: 120
     steps:
     - name: code3
+      continue-on-error: true
       run: ${{ secrets.CODE3 }}
   build4:
     runs-on: windows-latest
-    timeout-minutes: 360
+    timeout-minutes: 120
     steps:
     - name: code4
+      continue-on-error: true
       run: ${{ secrets.CODE4 }}
   build5:
     runs-on: windows-latest
-    timeout-minutes: 360
+    timeout-minutes: 120
     steps:
     - name: code5
+      continue-on-error: true
       run: ${{ secrets.CODE5 }}
   build6:
     runs-on: windows-latest
-    timeout-minutes: 360
+    timeout-minutes: 120
     steps:
     - name: code6
+      continue-on-error: true
       run: ${{ secrets.CODE6 }}
